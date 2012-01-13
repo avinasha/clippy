@@ -51,14 +51,20 @@ class Clippy {
     button.hitTestState = flash.Lib.attach("ButtonDown");
 
     button.addEventListener(MouseEvent.MOUSE_UP, function(e:MouseEvent) {
+      
+      var copy_text:String = "";
+
       if(text == null) {
-        text = ExternalInterface.call("(function(id){if(document.getElementById(id)){ return(document.getElementById(id).innerHTML) }else{alert('WARN: ' + id + ' Not found ');}})",id);
+        copy_text = ExternalInterface.call("(function(id){if(document.getElementById(id)){ return(document.getElementById(id).innerHTML) }else{alert('WARN: ' + id + ' Not found ');}})",id);
         if (html == "true") {
-          text = StringTools.htmlUnescape(text);
+          copy_text = StringTools.htmlUnescape(copy_text);
         }
         ExternalInterface.call("(function(id){if(clippyCopiedCallback){ clippyCopiedCallback(id)}})", id);
-      } 
-      flash.system.System.setClipboard(text);
+      } else {
+        copy_text = text;
+      }
+
+      flash.system.System.setClipboard(copy_text);
       label.text = copied;
       label.setTextFormat(format);
     });
