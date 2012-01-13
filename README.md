@@ -7,7 +7,7 @@ to be copied to the clipboard
 ```
 <param NAME="FlashVars" value="text=Hai"> <!-- Text Copied = Hai -->
 <param NAME="FlashVars" value="id=element_id"> <!-- Text Copied = innerHTML of element_id -->
-<param NAME="FlashVars" value="id=element_id&html=true"> <!-- Text Copied = Upescaped version of innerHTML of element_id -->
+<param NAME="FlashVars" value="id=element_id&html=true"> <!-- Text Copied = Unescaped version of innerHTML of element_id -->
 ```
 
 Clippy is a very simple Flash widget that makes it possible to place arbitrary
