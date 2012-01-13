@@ -1,6 +1,15 @@
 Clippy - Helping you copy text to your clipboard
 ================================================
 
+This version of Clippy gives an option to specify the source of the text
+to be copied to the clipboard
+
+```
+<param NAME="FlashVars" value="text=Hai"> <!-- Text Copied = Hai -->
+<param NAME="FlashVars" value="id=element_id"> <!-- Text Copied = innerHTML of element_id -->
+<param NAME="FlashVars" value="id=element_id&html=true"> <!-- Text Copied = Upescaped version of innerHTML of element_id -->
+```
+
 Clippy is a very simple Flash widget that makes it possible to place arbitrary
 text onto the client's clipboard. Here is what Clippy looks like on GitHub:
 
